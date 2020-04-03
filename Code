@@ -1,62 +1,67 @@
-int led1 = D7; 
+
+int LED = D7; 
 
 void setup() {
-  pinMode(led1, OUTPUT);
+
+
+  pinMode(LED, OUTPUT);
+ 
+
+}
+int unit=10;
+void dot_func()
+{
+    digitalWrite(LED,HIGH);
+    delay(unit);
+    digitalWrite(LED,LOW);
+    delay(unit);
+}
+void dash_func()
+{
+    digitalWrite(LED,HIGH);
+    delay(unit*2);
+    digitalWrite(LED,LOW);
+    delay(unit*2);
+}
+void char_change()
+{
+    digitalWrite(LED,HIGH);
+    delay(unit*6);
+    digitalWrite(LED,LOW);
+    delay(unit*6);
 }
 
 
 void loop() {
 
-  digitalWrite(led1, HIGH);
-  delay(20);
-
-
-  digitalWrite(led1, LOW);
-  delay(10);
-  
-  
-  digitalWrite(led1, LOW);
-  delay(10);
-  
-  digitalWrite(led1, HIGH);
-  delay(20);
- 
-  digitalWrite(led1, LOW);
-  delay(10);
-
-  digitalWrite(led1, LOW);
-  delay(10);
-  
-
-  digitalWrite(led1, LOW);
-  delay(10);
-  
-  digitalWrite(led1, HIGH);
-  delay(20);
-  
-  digitalWrite(led1, HIGH);
-  delay(20);
-  
-  digitalWrite(led1, LOW);
-  delay(10);
- 
-  digitalWrite(led1, LOW);
-  delay(10);
-
-  digitalWrite(led1, LOW);
-  delay(10);
-
-  digitalWrite(led1, LOW);
-  delay(10);
-  digitalWrite(led1, LOW);
-  delay(10);
-  digitalWrite(led1, HIGH);
-  delay(20);
-  digitalWrite(led1, HIGH);
-  delay(20);
-
-  digitalWrite(led1, LOW);
-  delay(10);
+  dash_func();
+  dot_func();
+  char_change();
+  dot_func();
+  dash_func();
+  char_change();
+  for(int i=0;i<3;i++)
+  {
+      dot_func();
+      
+  }
+  dash_func();
+  char_change();
+  dash_func();
+  for(int i=0;i<2;i++)
+  {
+      dot_func();
+      
+  }
+  char_change();
+  dot_func();
+  char_change();
+  dot_func();
+  char_change();
+  dot_func();
+  dash_func();
+  dash_func();
+  dot_func();
   
 }
 
